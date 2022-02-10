@@ -34,7 +34,7 @@ fetch("https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=mul
     return response.json()
   })
   .then(loadQuestions => {
-    console.log(loadQuestions.results); //todo see downloaded json
+    // console.log(loadQuestions.results); //todo see downloaded json
     //!local json
     // questions = loadQuestions;
     // startGame();
@@ -101,7 +101,6 @@ startGame = () => {
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
-  // console.log(availableQuestions);
   getNewQuestion();
   loader.classList.add('hidden');
     game.classList.remove('hidden'); 
@@ -143,14 +142,13 @@ getNewQuestion = () => {
 
 choices.forEach(choice => {
   choice.addEventListener('click', e => {
-    // console.log(e.target);
     if(!acceptingAnswers) return;
 
     acceptingAnswers = false;
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset['number'];
 
-    console.log(selectedAnswer, currentQuestion.answer);
+    // console.log(selectedAnswer, currentQuestion.answer);
 
     const classToApply =
       selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
