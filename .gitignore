@@ -1,3 +1,11 @@
+
+# IDE - VSCode
+# .vscode/*
+# !.vscode/settings.json  -- Line discovered that was overriding above (REMOVE)
+
+**/.vscode/
+
+test.md
 # Logs
 logs
 *.log
